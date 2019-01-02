@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ExspenseListItem from "./ExspenseListItem";
 import selectExpenses from "../selectors/expenses";
@@ -9,13 +8,13 @@ export const ExpenseList = ( props ) => (
 		{
 			props.expenses.length === 0 ? (
 				<p>No expenses</p>
-			): (
+			) : (
 				props.expenses.map( ( expense ) => {
 					return <ExspenseListItem key={ expense.id } { ...expense } />;
 				} )
 			)
 		}
-		
+	
 	</div>
 );
 

@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { setEndDate, setStartDate, setTextFilter, sortByAmount, sortByDate } from "../actions/filters";
 import { DateRangePicker } from "react-dates";
@@ -56,9 +55,12 @@ export class ExpenseListFilters extends React.Component {
 	}
 }
 
-const mapStateToProps = ( state ) => ( {
-	filters: state.filter,
-} );
+const mapStateToProps = ( state ) => {
+	
+	return {
+		filters: state.filter,
+	};
+};
 
 const mapDischargeToProps = ( dispatch ) => ( {
 	setTextFilter: ( text ) => dispatch( setTextFilter( text ) ),
