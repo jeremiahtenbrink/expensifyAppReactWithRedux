@@ -91,3 +91,13 @@ test( "should not edit the array if the item isn't found", () => {
 	const state = expenseReducer( expenses, action );
 	expect( state ).toEqual( expenses );
 } );
+
+test('should set expenses', () => {
+	const action = {
+		type: 'SET EXPENSES',
+		expenses: [expenses[1]]
+	};
+	
+	const state = expenseReducer( expenses, action);
+	expect(state).toEqual([expenses[1]]);
+});

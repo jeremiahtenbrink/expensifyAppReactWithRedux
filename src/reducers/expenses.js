@@ -12,14 +12,14 @@ export default ( state = expensesReducerDefaultState, action ) => {
 		case "EDIT EXPENSE":
 			return state.map( ( expense ) => {
 				if ( expense.id === action.id ){
-					const newExpense = { ...expense, ...action.updates };
-					
-					return newExpense;
+					return { ...expense, ...action.updates };
 					
 				} else{
 					return expense;
 				}
 			} );
+		case "SET EXPENSES":
+			return action.expenses;
 		default:
 			return state;
 	}
