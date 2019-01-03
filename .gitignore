@@ -1,2 +1,4 @@
 node_modules/
 public/dis/
+.env.test
+.env.development

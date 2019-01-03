@@ -7,7 +7,7 @@ const Header = () => (
 		<nav>
 			<ul>
 				<li><NavLink to="/" activeClassName="is-active" exact={ true }>Dashboard</NavLink></li>
-				<li><NavLink to="/create" activeClassName="is-active">Create Expense</NavLink></li>u
+				<li><NavLink to="/create" activeClassName="is-active">Create Expense</NavLink></li>
 			</ul>
 		</nav>
 	</header>
