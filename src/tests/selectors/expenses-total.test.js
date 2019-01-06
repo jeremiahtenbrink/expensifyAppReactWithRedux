@@ -1,20 +1,17 @@
-import { getExpensesTotal } from "../../selectors/expenses-total";
-import expenses from "../fixtures/expenses";
+import selectExpensesTotal from '../../selectors/expenses-total';
+import expenses from '../fixtures/expenses';
 
-test( "should total for the expenses passed in", () => {
-	
-	const result = getExpensesTotal( expenses );
-	expect( result ).toBe( 114195 );
-} );
+test('should return 0 if no expenses', () => {
+  const res = selectExpensesTotal([]);
+  expect(res).toBe(0);
+});
 
-test( "should add up no expense", () => {
-	
-	const result = getExpensesTotal( [] );
-	expect( result ).toBe( 0 );
-} );
+test('should correctly add up a single expense', () => {
+  const res = selectExpensesTotal([expenses[0]]);
+  expect(res).toBe(195);
+});
 
-test( "should add up only one expense", () => {
-	
-	const result = getExpensesTotal( [expenses[1]] );
-	expect( result ).toBe( 109500 );
-} );
+test('should correctly add up multiple expenses', () => {
+  const res = selectExpensesTotal(expenses);
+  expect(res).toBe(114195);
+});

@@ -1,37 +1,22 @@
-//BIG BUTTON
-.big-button {
-  background-color: $purple;
-  border: none;
-  border-bottom: .6rem solid darken($purple, 10%);
-  color: white;
-  font-weight: bold;
-  font-size: $l-size;
-  width: 100%;
-  margin-bottom: $m-size;
-  padding: 2.4rem;
-
-  @media (min-width: $desktopBreakpoint) {
-    margin-bottom: $xl-size;
-  }
-
-  &:disabled {
-    opacity: .5;
-  }
-}
-
-//BUTTON
 .button {
-  background: $purple;
+  background: $blue;
   border: none;
-  border-bottom: .3rem solid darken($purple, 10%);
   color: white;
-  font-weight: 500;
+  display: inline-block;
   padding: $s-size;
+  font-weight: 300;
+  line-height: 1;
+  font-size: $font-size-large;
+  text-decoration: none;
 
   &--link {
-    background: none;
-    border: none;
-    color: $off-white;
-    padding: 0;
+    background: transparent;
+
   }
+
+  &--secondary {
+    background: #888;
+  }
+
+
 }
